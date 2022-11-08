@@ -6,14 +6,43 @@
 <br>
 
 <div class="row">
-	<div class="col-md-5">
+	<div class="col-md-12" >
+		<div style="overflow-x:auto;">
+		<table>
+			<tr>
+				<th>Time</th>
+				<th>Title</th>
+				<th>Negative sentiment</th>
+				<th>Postive sentiment</th>
+				<th>Neutral sentiment</th>
+				
+			  </tr>
+			{% for i in  articles %}
+			<tr>
+				<td>{{i.pubDate}}</td>
+				<td>{{i.title}}</td>
+				<td style="background-color:red ; color: white;">{{i.sentiment.positive}}</td>
+				<td style="background-color:green ;color: white;">{{i.sentiment.negative}}</td>
+				<td style="background-color: blue;color: white;">{{i.sentiment.neutral}}</td>
+				
+				
+			</tr>
+			{% endfor %}
+		</table>
+		</div>
+
+	    
+        
+		
+		<p>{{i.title}}</p>
+		<p>{{i.pubDate}}</p>
+
+	
 
 		
 	</div>
 
-	<div class="col-md-7">
-		
-	</div>
+
 
 </div>
 
